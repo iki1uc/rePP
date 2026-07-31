@@ -1,86 +1,14 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="UTF-8">
+<h1><RENAME> – RE‑Raum</h1>
 
-<!-- NUR HIER ändern: Name des RE‑Raums -->
-<script>
-    const RENAME = "reOMG"; 
-</script>
+<a href="README.md">README.md</a>
+<a href="ID.html">ID.html</a>
 
-<title>RE – <span id="titleName"></span> · iki1uc</title>
+<ul>
+  <li>achse-bedeutung-8.csv</li>
+  <li>achse-funktion-3.csv</li>
+  <li>achse-modul-12.csv</li>
+  <li>achse-quelle-12.csv</li>
+  <li><ZUSTAND_CSV></li>
+</ul>
 
-<style>
-body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
-.block { background:#111; border:1px solid #333; padding:25px; margin-bottom:30px; border-radius:8px; }
-.title { font-size:22px; color:#6cf; margin-bottom:10px; }
-pre { background:#000; border-left:3px solid #6cf; padding:15px; white-space:pre-wrap; }
-</style>
-
-<script type="module">
-import { ID_UNI } from "./ID_UNI.js";
-
-(async function(){
-
-    // 1) ID wird erzeugt
-    const ID = ID_UNI(RENAME);
-
-    // 2) ID wird gesammelt (Sleep-Modus)
-    const COLLECT = {
-        ready: false,
-        id: ID,
-        wake(){
-            this.ready = true;
-            return true;
-        }
-    };
-
-    // 3) ID wird angezeigt
-    document.getElementById("id-out").innerText =
-        JSON.stringify(ID, null, 2);
-
-    // 4) ID weckt den Code auf
-    if(COLLECT.wake()){
-
-        // 5) Jetzt erst beginnt der Code zu wirken
-        const CORE = {
-            name: RENAME,
-            active: true,
-            timestamp: Date.now(),
-            vector: {
-                xi: 11,
-                ix: 9,
-                x4: ["IN", "OUT", "RE", "UNI"]
-            },
-            status: "awake"
-        };
-
-        document.getElementById("core-out").innerText =
-            JSON.stringify(CORE, null, 2);
-    }
-
-})();
-</script>
-
-</head>
-
-<body>
-
-<h1>RE – <span id="titleName"></span></h1>
-
-<div class="block">
-    <div class="title">Identität (ID)</div>
-    <pre id="id-out"></pre>
-</div>
-
-<div class="block">
-    <div class="title">Core (aktiv nach ID‑Wake‑Up)</div>
-    <pre id="core-out"></pre>
-</div>
-
-<script>
-    document.getElementById("titleName").innerText = RENAME;
-</script>
-
-</body>
-</html>
+<p>Shogun = Raum · Schach = Regel · Skat = Mensch</p>
